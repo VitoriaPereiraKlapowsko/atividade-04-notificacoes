@@ -1,4 +1,5 @@
 const { app, BrowserWindow, Notification } = require('electron')
+const axios = require('axios');
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -11,6 +12,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
     createWindow();
+    novaNotification()
 })
 
 function novaNotification() {
@@ -29,3 +31,18 @@ function novaNotification() {
     console.log("Exibindo Notificação");
     novaNotification.show();
 }
+
+function atualizarNotificacao(titulo, conteudo) {
+    return axios.post('http://localhost:3000/atualizarNotificacao', {
+        titulo: titulo,
+        conteudo: conteudo,
+    });
+}
+
+atualizarNotificacao("Novo Título", "Novo Conteúdo")
+    .then(response => {
+        console.log("Notificação atualizada com sucesso:", response.data);
+    })
+    .catch(error => {
+        console.error("Erro ao atualizar notificação:", error);
+    });
