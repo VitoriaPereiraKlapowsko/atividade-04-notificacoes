@@ -1,22 +1,16 @@
-const {
-    app,
-    BrowserWindow,
-    Notification
-} = require('electron')
+const { app, BrowserWindow, Notification } = require('electron')
 
-const creatWindow = () => {
+const createWindow = () => {
     const win = new BrowserWindow({
-        with: 800,
+        width: 800,
         height: 600,
     })
 
     win.loadFile('index.html')
-
 }
 
 app.whenReady().then(() => {
-    creatWindow(),
-        novaNotification();
+    createWindow();
 })
 
 function novaNotification() {
