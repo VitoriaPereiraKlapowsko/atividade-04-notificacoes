@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testando API</title>
 </head>
+
 <body>
     <h1>Hello, World!</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Título da Notificação</th>
-                <th>Conteúdo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><input type="text" id="titulo"></td>
-                <td><input type="text" id="conteudo"></td>
-            </tr>
-        </tbody>
-    </table>
+    <label for="titulo">Título da Notificação:</label>
+    <input type="text" id="titulo"><br>
+
+    <label for="conteudo">Conteúdo:</label>
+    <input type="text" id="conteudo"><br>
+
     <button id="notificar">Criar Notificação</button>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
